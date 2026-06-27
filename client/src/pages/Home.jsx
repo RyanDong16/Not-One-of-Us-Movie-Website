@@ -17,7 +17,7 @@ const Home = () => {
             </h1>
 
             <p className="home-tagline">
-                LOGLINE
+                TAGLINE
             </p>
 
             <a

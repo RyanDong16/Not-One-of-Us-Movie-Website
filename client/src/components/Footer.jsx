@@ -13,7 +13,7 @@ const Footer = () => {
                 </h1>
 
                 <p className="footer-tagline">
-                    TAG SLOGAN. Loyalty has a price. Family collects.
+                    TAGLINE.
                 </p>
 
                 <div className="footer-social-links" aria-label="Social media links">
