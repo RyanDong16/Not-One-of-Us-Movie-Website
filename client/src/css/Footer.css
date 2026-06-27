@@ -1,0 +1,316 @@
+.site-footer {
+    position: relative;
+    padding: 3rem 1.5rem 2.5rem;
+
+    background:
+        radial-gradient(circle at 50% 0%, rgba(150, 0, 0, 0.22), transparent 34%),
+        linear-gradient(180deg, #050505 0%, #0a0a0a 45%, #000000 100%);
+
+    color: #f2f2f2;
+    text-align: center;
+    overflow: hidden;
+
+    border-top: 1px solid rgba(155, 0, 0, 0.6);
+}
+
+/* Gritty texture */
+.site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.025) 0px,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.018) 0px,
+            rgba(255, 0, 0, 0.018) 1px,
+            transparent 1px,
+            transparent 7px
+        );
+
+    opacity: 0.22;
+    pointer-events: none;
+}
+
+/* Dark vignette */
+.site-footer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.82) 100%);
+
+    pointer-events: none;
+}
+
+.footer-crime-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: min(760px, 88vw);
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(155, 0, 0, 0.95),
+        transparent
+    );
+
+    box-shadow:
+        0 0 18px rgba(155, 0, 0, 0.8),
+        0 0 38px rgba(155, 0, 0, 0.35);
+
+    z-index: 1;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-kicker {
+    margin: 0 0 0.75rem;
+
+    color: #a9a9a9;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+}
+
+.footer-content h1 {
+    margin: 0;
+
+    font-family: "Arial Black", "Impact", "Helvetica Neue", sans-serif;
+    font-size: clamp(2rem, 5vw, 4.25rem);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: clamp(0.12em, 0.7vw, 0.24em);
+    text-transform: uppercase;
+
+    color: #f5f5f5;
+
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.85),
+        0 5px 18px rgba(0, 0, 0, 0.95);
+
+    transform: scaleY(1.12);
+}
+
+.footer-content h1 span {
+    color: #9b0000;
+
+    text-shadow:
+        0 0 2px rgba(155, 0, 0, 0.9),
+        0 5px 18px rgba(0, 0, 0, 0.95);
+}
+
+.footer-tagline {
+    max-width: 620px;
+    margin: 1.35rem auto 1.8rem;
+
+    color: #d8d8d8;
+
+    font-size: clamp(0.85rem, 1.25vw, 1rem);
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.95),
+        0 0 14px rgba(120, 0, 0, 0.45);
+}
+
+/* Social section */
+.footer-social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.95rem;
+
+    margin: 0 auto 1.9rem;
+}
+
+.footer-social-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+
+    min-height: 2.35rem;
+}
+
+.footer-social-name {
+    color: #f2f2f2;
+
+    font-size: clamp(0.9rem, 1.35vw, 1.05rem);
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.95),
+        0 0 14px rgba(155, 0, 0, 0.35);
+}
+
+/* Logo images acting like borderless buttons */
+.NotOneofUs-Instagram,
+.CruiseFilms-Instagram,
+.CruiseFilms-YouTube {
+    display: inline-block;
+
+    width: 2rem;
+    height: 2rem;
+
+    object-fit: contain;
+
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+
+    filter:
+        drop-shadow(0 0 6px rgba(255, 255, 255, 0.18))
+        drop-shadow(0 0 12px rgba(155, 0, 0, 0.35));
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.CruiseFilms-YouTube {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.NotOneofUs-Instagram:hover,
+.CruiseFilms-Instagram:hover,
+.CruiseFilms-YouTube:hover {
+    transform: translateY(-2px) scale(1.12);
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 255, 255, 0.55))
+        drop-shadow(0 0 18px rgba(155, 0, 0, 0.9));
+}
+
+.NotOneofUs-Instagram:active,
+.CruiseFilms-Instagram:active,
+.CruiseFilms-YouTube:active {
+    transform: translateY(0) scale(0.96);
+}
+
+.footer-divider {
+    width: min(360px, 64vw);
+    height: 1px;
+    margin: 0 auto 1rem;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(120, 120, 120, 0.7),
+        transparent
+    );
+}
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+}
+
+.footer-legal h2 {
+    margin: 0;
+
+    color: #858585;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.footer-legal-gap {
+    width: 5px;
+    height: 5px;
+
+    background: #7a0000;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px rgba(155, 0, 0, 0.8);
+}
+
+@media (max-width: 700px) {
+    .site-footer {
+        padding: 2.5rem 1rem 2rem;
+    }
+
+    .footer-kicker {
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
+    }
+
+    .footer-content h1 {
+        font-size: clamp(1.75rem, 10vw, 3rem);
+        letter-spacing: 0.12em;
+    }
+
+    .footer-tagline {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+    }
+
+    .footer-social-links {
+        gap: 1rem;
+    }
+
+    .footer-social-row {
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-social-name {
+        width: 100%;
+        font-size: 0.78rem;
+        letter-spacing: 0.13em;
+    }
+
+    .NotOneofUs-Instagram,
+    .CruiseFilms-Instagram {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+
+    .CruiseFilms-YouTube {
+        width: 1.1rem;
+        height: 1.1rem;
+    }
+
+    .footer-legal {
+        gap: 0.85rem;
+    }
+
+    .footer-legal h2 {
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+    }
+}
