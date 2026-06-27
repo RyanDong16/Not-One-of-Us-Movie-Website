@@ -27,7 +27,7 @@
     object-fit: cover;
     object-position: center center;
 
-    filter: brightness(0.58) contrast(1.2) saturate(0.85);
+    filter: brightness(1) contrast(1.2) saturate(0.85);
     transform: scale(1.02);
 }
 
