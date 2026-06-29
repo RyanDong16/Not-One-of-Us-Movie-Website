@@ -1,0 +1,283 @@
+/* Overall page */
+.crew-page,
+div:has(> h1:first-child) {
+    position: relative;
+    min-height: 100vh;
+    padding: 6rem 1.5rem 5rem;
+
+    background:
+        radial-gradient(circle at 50% 8%, rgba(155, 0, 0, 0.28), transparent 32%),
+        radial-gradient(circle at 15% 35%, rgba(80, 0, 0, 0.2), transparent 28%),
+        linear-gradient(180deg, #050505 0%, #0a0a0a 48%, #000000 100%);
+
+    color: #f2f2f2;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Gritty overlay */
+.crew-page::before,
+div:has(> h1:first-child)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.03) 0px,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.018) 0px,
+            rgba(255, 0, 0, 0.018) 1px,
+            transparent 1px,
+            transparent 7px
+        );
+
+    opacity: 0.18;
+    mix-blend-mode: screen;
+}
+
+/* Dark vignette */
+.crew-page::after,
+div:has(> h1:first-child)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at center, transparent 38%, rgba(0, 0, 0, 0.86) 100%);
+}
+
+/* Main title */
+.crew-page h1,
+div:has(> h1:first-child) > h1 {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 auto 3rem;
+    text-align: center;
+
+    font-family: "Arial Black", "Impact", "Helvetica Neue", sans-serif;
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: clamp(0.18em, 1vw, 0.32em);
+    text-transform: uppercase;
+
+    color: #f5f5f5;
+
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.9),
+        0 5px 18px rgba(0, 0, 0, 0.95),
+        0 0 32px rgba(155, 0, 0, 0.6);
+
+    transform: scaleY(1.16);
+}
+
+.crew-page h1::after,
+div:has(> h1:first-child) > h1::after {
+    content: "";
+    display: block;
+
+    width: min(460px, 72vw);
+    height: 2px;
+    margin: 1.15rem auto 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(155, 0, 0, 0.95),
+        transparent
+    );
+
+    box-shadow:
+        0 0 16px rgba(155, 0, 0, 0.85),
+        0 0 32px rgba(155, 0, 0, 0.35);
+}
+
+/* Hero image right under Crew heading */
+.crew-page > .crew-headshot:first-of-type,
+div:has(> h1:first-child) > .crew-headshot:first-of-type {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+    width: min(92vw, 960px);
+    height: clamp(260px, 52vw, 560px);
+    margin: 0 auto 4rem;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 1px solid rgba(155, 0, 0, 0.6);
+
+    box-shadow:
+        0 0 26px rgba(155, 0, 0, 0.35),
+        0 22px 50px rgba(0, 0, 0, 0.85);
+
+    filter: brightness(0.72) contrast(1.18) saturate(0.82);
+}
+
+/* Each crew section starts at an h2 */
+.crew-page h2,
+div:has(> h1:first-child) > h2 {
+    position: relative;
+    z-index: 1;
+
+    width: min(920px, 92vw);
+    margin: 4rem auto 0.45rem;
+
+    color: #9b0000;
+
+    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(155, 0, 0, 0.55),
+        0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.crew-page h3,
+div:has(> h1:first-child) > h3 {
+    position: relative;
+    z-index: 1;
+
+    width: min(920px, 92vw);
+    margin: 0 auto 1.25rem;
+
+    color: #f4f4f4;
+
+    font-family: "Arial Black", "Impact", "Helvetica Neue", sans-serif;
+    font-size: clamp(1.65rem, 4vw, 3.5rem);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.75),
+        0 5px 18px rgba(0, 0, 0, 0.95);
+}
+
+/* Crew portraits */
+.crew-page h2 + h3 + .crew-headshot,
+div:has(> h1:first-child) > h2 + h3 + .crew-headshot {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+    width: min(420px, 86vw);
+    height: 520px;
+    margin: 1.35rem auto 1.7rem;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border: 1px solid rgba(155, 0, 0, 0.62);
+    background: #050505;
+
+    box-shadow:
+        0 0 18px rgba(155, 0, 0, 0.28),
+        0 18px 42px rgba(0, 0, 0, 0.85);
+
+    filter: brightness(0.78) contrast(1.15) saturate(0.82);
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.crew-page h2 + h3 + .crew-headshot:hover,
+div:has(> h1:first-child) > h2 + h3 + .crew-headshot:hover {
+    transform: translateY(-4px);
+    filter: brightness(0.88) contrast(1.2) saturate(0.9);
+
+    box-shadow:
+        0 0 24px rgba(155, 0, 0, 0.5),
+        0 22px 48px rgba(0, 0, 0, 0.92);
+}
+
+/* Bio paragraphs */
+.crew-page p,
+div:has(> h1:first-child) > p {
+    position: relative;
+    z-index: 1;
+
+    width: min(820px, 92vw);
+    margin: 0.85rem auto;
+
+    color: #d6d6d6;
+
+    font-size: clamp(0.98rem, 1.35vw, 1.08rem);
+    line-height: 1.85;
+    letter-spacing: 0.025em;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+/* Adds a subtle red divider after the last paragraph before next role */
+.crew-page p + h2,
+div:has(> h1:first-child) > p + h2 {
+    margin-top: 5rem;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .crew-page,
+    div:has(> h1:first-child) {
+        padding: 4.5rem 1rem 4rem;
+    }
+
+    .crew-page h1,
+    div:has(> h1:first-child) > h1 {
+        font-size: clamp(2.75rem, 15vw, 5rem);
+        letter-spacing: 0.16em;
+    }
+
+    .crew-page > .crew-headshot:first-of-type,
+    div:has(> h1:first-child) > .crew-headshot:first-of-type {
+        height: 330px;
+        margin-bottom: 3rem;
+    }
+
+    .crew-page h2,
+    div:has(> h1:first-child) > h2 {
+        margin-top: 3.5rem;
+        font-size: 0.82rem;
+        letter-spacing: 0.16em;
+        text-align: center;
+    }
+
+    .crew-page h3,
+    div:has(> h1:first-child) > h3 {
+        font-size: clamp(1.65rem, 9vw, 2.65rem);
+        text-align: center;
+        letter-spacing: 0.06em;
+    }
+
+    .crew-page h2 + h3 + .crew-headshot,
+    div:has(> h1:first-child) > h2 + h3 + .crew-headshot {
+        width: min(320px, 88vw);
+        height: 410px;
+    }
+
+    .crew-page p,
+    div:has(> h1:first-child) > p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        text-align: left;
+    }
+}

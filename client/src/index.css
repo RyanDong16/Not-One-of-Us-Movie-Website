@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    background: #000;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Prevents the app wrapper from adding side spacing */
+.layout {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Makes main content stretch edge-to-edge */
+main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensures the home hero can touch both browser edges */
+.home-section {
+    width: 100%;
+    margin: 0;
+}
+
+/* Keeps the background image fully edge-to-edge */
+.home-title-card {
+    width: 100%;
+    max-width: none;
+}

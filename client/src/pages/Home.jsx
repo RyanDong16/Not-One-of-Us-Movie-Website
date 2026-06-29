@@ -17,12 +17,12 @@ const Home = () => {
             </h1>
 
             <p className="home-tagline">
-                TAGLINE
+                Dreams are worth dying for.
             </p>
 
             <a
                 className="film-link-btn"
-                href="https://www.youtube.com/watch?v=cAPhktecank"
+                href="https://www.youtube.com/watch?v=p42a0FgbbI Q"
                 target="_blank"
                 rel="noreferrer"
             >

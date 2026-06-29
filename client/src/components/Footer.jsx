@@ -13,7 +13,7 @@ const Footer = () => {
                 </h1>
 
                 <p className="footer-tagline">
-                    TAGLINE.
+                    Dreams are worth dying for.
                 </p>
 
                 <div className="footer-social-links" aria-label="Social media links">
@@ -32,9 +32,7 @@ const Footer = () => {
                                 className="NotOneofUs-Instagram"
                             />
                         </a>
-                    </div>
 
-                    <div className="footer-social-row">
                         <span className="footer-social-name">Cruise Films</span>
 
                         <a

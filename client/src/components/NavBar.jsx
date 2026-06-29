@@ -1,31 +1,50 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../css/NavBar.css";
 
 const NavBar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
     return (
         <nav className="navbar">
-            <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                Home
-            </NavLink>
+            <button
+                className={`menu-toggle ${menuOpen ? "open" : ""}`}
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle navigation menu"
+                aria-expanded={menuOpen}
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-            <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                About
-            </NavLink>
+            <div className={`nav-menu ${menuOpen ? "show" : ""}`}>
+                <NavLink to="/" onClick={closeMenu} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                    Home
+                </NavLink>
 
-            <NavLink to="/crew" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                Crew
-            </NavLink>
+                <NavLink to="/about" onClick={closeMenu} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                    About
+                </NavLink>
 
-            <NavLink to="/cast" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                Cast
-            </NavLink>
+                <NavLink to="/crew" onClick={closeMenu} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                    Crew
+                </NavLink>
 
-            <NavLink to="/gallery" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                Gallery
-            </NavLink>
+                <NavLink to="/cast" onClick={closeMenu} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                    Cast
+                </NavLink>
+
+                <NavLink to="/gallery" onClick={closeMenu} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                    Gallery
+                </NavLink>
+            </div>
         </nav>
-    )
-
-}
+    );
+};
 
 export default NavBar;

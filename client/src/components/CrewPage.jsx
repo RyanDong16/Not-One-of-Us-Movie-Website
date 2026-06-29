@@ -4,9 +4,19 @@ const CrewPage = () => {
     return (
         <div>
             <h1>Crew</h1>
+                <img
+                    src="/assets/Crew Photos/DSCF6997-2.jpg"
+                    alt="Julian Rodriguez"
+                    className="crew-headshot"
+                />
 
             <h2>Writer/ Director</h2>
                 <h3>Julian Rodriguez</h3>
+                <img
+                    src="/assets/Crew Photos/Julian Headshot.jpg"
+                    alt="Julian Rodriguez"
+                    className="crew-headshot"
+                />
                     <p>
                         Julian Rodriguez is a filmmaker based in San Diego with a passion for telling stories that thrill 
                         and inspire audiences. Throughout his academic career, Rodriguez has written and directed 
@@ -21,6 +31,11 @@ const CrewPage = () => {
 
             <h2>Producer</h2>
                 <h3>Alana Davis</h3>
+                <img
+                    src="/assets/Crew Photos/520A2983.jpg"
+                    alt="Alana Davis"
+                    className="crew-headshot"
+                />
                     <p>
                         Alana Davis is a graduate from SDSU’S Television, film and New Media Program. During her time at SDSU 
                         she has worked on a number of different projects, as a cinematographer, director and producer. Her 
@@ -30,6 +45,11 @@ const CrewPage = () => {
 
             <h2>Cinematographer</h2>
                 <h3>Kevin Valderrama-Garcia</h3>
+                <img
+                    src="/assets/Crew Photos/Kevin Favorite.jpg"
+                    alt="Kevin Valderrama-Garcia"
+                    className="crew-headshot"
+                />
                     <p>
                         Kevin Valderrama-Garcia is in his final semester at San Diego State University majoring in Television, 
                         Film and New Media Production. He has been part of numerous film projects taking on different roles 
@@ -41,6 +61,11 @@ const CrewPage = () => {
 
             <h2>Production Designer</h2>
                 <h3>Maximo Gutierrez</h3>
+                <img
+                    src="/assets/Crew Photos/520A2899.jpg"
+                    alt="Maximo Gutierrez"
+                    className="crew-headshot"
+                />
                     <p>
                         Maximo Gutierrez is in his final semester of the Television, Film, and New Media Studies- Production major 
                         at San Diego State University. Outside of various roles he’s taken on in the film program, his biggest 
@@ -53,6 +78,11 @@ const CrewPage = () => {
 
             <h2>Editor</h2>
                 <h3>Eduardo Salas Mata</h3>
+                <img
+                    src="/assets/Crew Photos/520A2928.jpg"
+                    alt="Eduardo Salas Mata"
+                    className="crew-headshot"
+                />
                     <p>
                         Eduardo Salas Mata is a film production student at San Diego State University. He was nominated for an event 
                         promotion at the IBS Conference, recognizing his creativity and storytelling work in media production. In 
