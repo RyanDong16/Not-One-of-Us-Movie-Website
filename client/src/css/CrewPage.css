@@ -1,6 +1,5 @@
-/* Overall page */
-.crew-page,
-div:has(> h1:first-child) {
+/* Overall Crew page */
+.crew-wrapper {
     position: relative;
     min-height: 100vh;
     padding: 6rem 1.5rem 5rem;
@@ -16,8 +15,7 @@ div:has(> h1:first-child) {
 }
 
 /* Gritty overlay */
-.crew-page::before,
-div:has(> h1:first-child)::before {
+.crew-wrapper::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -45,8 +43,7 @@ div:has(> h1:first-child)::before {
 }
 
 /* Dark vignette */
-.crew-page::after,
-div:has(> h1:first-child)::after {
+.crew-wrapper::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -57,9 +54,8 @@ div:has(> h1:first-child)::after {
         radial-gradient(circle at center, transparent 38%, rgba(0, 0, 0, 0.86) 100%);
 }
 
-/* Main title */
-.crew-page h1,
-div:has(> h1:first-child) > h1 {
+/* Main Crew title */
+.crew-wrapper > h1 {
     position: relative;
     z-index: 1;
 
@@ -83,8 +79,7 @@ div:has(> h1:first-child) > h1 {
     transform: scaleY(1.16);
 }
 
-.crew-page h1::after,
-div:has(> h1:first-child) > h1::after {
+.crew-wrapper > h1::after {
     content: "";
     display: block;
 
@@ -104,18 +99,18 @@ div:has(> h1:first-child) > h1::after {
         0 0 32px rgba(155, 0, 0, 0.35);
 }
 
-/* Hero image right under Crew heading */
-.crew-page > .crew-headshot:first-of-type,
-div:has(> h1:first-child) > .crew-headshot:first-of-type {
+/* Large full cast image under Crew heading */
+.full-cast-photo {
     position: relative;
     z-index: 1;
 
     display: block;
     width: min(92vw, 960px);
-    height: clamp(260px, 52vw, 560px);
-    margin: 0 auto 4rem;
+    height: auto;
+    max-height: none;
+    margin: 0 auto 5rem;
 
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
 
     border: 1px solid rgba(155, 0, 0, 0.6);
@@ -127,59 +122,46 @@ div:has(> h1:first-child) > .crew-headshot:first-of-type {
     filter: brightness(0.72) contrast(1.18) saturate(0.82);
 }
 
-/* Each crew section starts at an h2 */
-.crew-page h2,
-div:has(> h1:first-child) > h2 {
+/* Crew list container */
+.crew-page {
     position: relative;
     z-index: 1;
 
-    width: min(920px, 92vw);
-    margin: 4rem auto 0.45rem;
-
-    color: #9b0000;
-
-    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
-    font-weight: 900;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-
-    text-shadow:
-        0 0 8px rgba(155, 0, 0, 0.55),
-        0 2px 8px rgba(0, 0, 0, 0.9);
+    width: min(1120px, 94vw);
+    margin: 0 auto;
 }
 
-.crew-page h3,
-div:has(> h1:first-child) > h3 {
-    position: relative;
-    z-index: 1;
+/* Each crew member row */
+.crew-member {
+    display: grid;
+    grid-template-columns: 420px minmax(0, 1fr);
+    column-gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
 
-    width: min(920px, 92vw);
-    margin: 0 auto 1.25rem;
+    margin: 0 auto 6rem;
+}
 
-    color: #f4f4f4;
+/* Alternate every other profile */
+.crew-member:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr) 420px;
+}
 
-    font-family: "Arial Black", "Impact", "Helvetica Neue", sans-serif;
-    font-size: clamp(1.65rem, 4vw, 3.5rem);
-    line-height: 1;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+.crew-member:nth-child(even) .crew-headshot {
+    grid-column: 2;
+}
 
-    text-shadow:
-        0 0 2px rgba(255, 255, 255, 0.75),
-        0 5px 18px rgba(0, 0, 0, 0.95);
+.crew-member:nth-child(even) .crew-info {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
 }
 
 /* Crew portraits */
-.crew-page h2 + h3 + .crew-headshot,
-div:has(> h1:first-child) > h2 + h3 + .crew-headshot {
-    position: relative;
-    z-index: 1;
-
+.crew-headshot {
     display: block;
-    width: min(420px, 86vw);
+
+    width: 420px;
     height: 520px;
-    margin: 1.35rem auto 1.7rem;
 
     object-fit: cover;
     object-position: center top;
@@ -199,8 +181,7 @@ div:has(> h1:first-child) > h2 + h3 + .crew-headshot {
         box-shadow 0.25s ease;
 }
 
-.crew-page h2 + h3 + .crew-headshot:hover,
-div:has(> h1:first-child) > h2 + h3 + .crew-headshot:hover {
+.crew-headshot:hover {
     transform: translateY(-4px);
     filter: brightness(0.88) contrast(1.2) saturate(0.9);
 
@@ -209,14 +190,49 @@ div:has(> h1:first-child) > h2 + h3 + .crew-headshot:hover {
         0 22px 48px rgba(0, 0, 0, 0.92);
 }
 
-/* Bio paragraphs */
-.crew-page p,
-div:has(> h1:first-child) > p {
-    position: relative;
-    z-index: 1;
+/* Text column */
+.crew-info {
+    grid-column: 2;
+    padding-top: 0.25rem;
+}
 
-    width: min(820px, 92vw);
-    margin: 0.85rem auto;
+/* Role */
+.crew-info h2 {
+    margin: 0 0 0.45rem;
+
+    color: #9b0000;
+
+    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(155, 0, 0, 0.55),
+        0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Crew member name */
+.crew-info h3 {
+    margin: 0 0 1.35rem;
+
+    color: #f4f4f4;
+
+    font-family: "Arial Black", "Impact", "Helvetica Neue", sans-serif;
+    font-size: clamp(1.65rem, 4vw, 3.5rem);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.75),
+        0 5px 18px rgba(0, 0, 0, 0.95);
+}
+
+/* Bio paragraphs */
+.crew-info p {
+    margin: 0.85rem 0;
 
     color: #d6d6d6;
 
@@ -228,54 +244,66 @@ div:has(> h1:first-child) > p {
         0 2px 8px rgba(0, 0, 0, 0.85);
 }
 
-/* Adds a subtle red divider after the last paragraph before next role */
-.crew-page p + h2,
-div:has(> h1:first-child) > p + h2 {
-    margin-top: 5rem;
-}
-
 /* Mobile */
 @media (max-width: 700px) {
-    .crew-page,
-    div:has(> h1:first-child) {
+    .crew-wrapper {
         padding: 4.5rem 1rem 4rem;
     }
 
-    .crew-page h1,
-    div:has(> h1:first-child) > h1 {
+    .crew-wrapper > h1 {
         font-size: clamp(2.75rem, 15vw, 5rem);
         letter-spacing: 0.16em;
     }
 
-    .crew-page > .crew-headshot:first-of-type,
-    div:has(> h1:first-child) > .crew-headshot:first-of-type {
+    .full-cast-photo {
         height: 330px;
         margin-bottom: 3rem;
     }
 
-    .crew-page h2,
-    div:has(> h1:first-child) > h2 {
-        margin-top: 3.5rem;
+    .crew-page {
+        width: min(920px, 94vw);
+    }
+
+    .crew-member,
+    .crew-member:nth-child(even) {
+        display: block;
+        margin-bottom: 4.5rem;
+    }
+
+    .crew-member:nth-child(even) .crew-info {
+        text-align: left;
+    }
+
+    .crew-headshot {
+        width: min(320px, 88vw);
+        height: 410px;
+        margin: 0 auto 1.7rem;
+    }
+
+    .crew-info {
+        padding-top: 0;
+    }
+
+    .crew-info h2 {
+        margin: 0 auto 0.45rem;
+
         font-size: 0.82rem;
         letter-spacing: 0.16em;
         text-align: center;
     }
 
-    .crew-page h3,
-    div:has(> h1:first-child) > h3 {
+    .crew-info h3 {
+        margin: 0 auto 1.25rem;
+
         font-size: clamp(1.65rem, 9vw, 2.65rem);
         text-align: center;
         letter-spacing: 0.06em;
     }
 
-    .crew-page h2 + h3 + .crew-headshot,
-    div:has(> h1:first-child) > h2 + h3 + .crew-headshot {
-        width: min(320px, 88vw);
-        height: 410px;
-    }
+    .crew-info p {
+        width: min(820px, 92vw);
+        margin: 0.85rem auto;
 
-    .crew-page p,
-    div:has(> h1:first-child) > p {
         font-size: 0.95rem;
         line-height: 1.75;
         text-align: left;

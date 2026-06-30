@@ -1,6 +1,5 @@
-/* Cast page */
-.cast-page,
-div:has(> h1:first-child) {
+/* Overall Cast page */
+.cast-wrapper {
     position: relative;
     min-height: 100vh;
     padding: 6rem 1.5rem 5rem;
@@ -15,9 +14,8 @@ div:has(> h1:first-child) {
     isolation: isolate;
 }
 
-/* Gritty film texture */
-.cast-page::before,
-div:has(> h1:first-child)::before {
+/* Gritty overlay */
+.cast-wrapper::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -45,8 +43,7 @@ div:has(> h1:first-child)::before {
 }
 
 /* Dark noir vignette */
-.cast-page::after,
-div:has(> h1:first-child)::after {
+.cast-wrapper::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -58,8 +55,7 @@ div:has(> h1:first-child)::after {
 }
 
 /* Page title */
-.cast-page h1,
-div:has(> h1:first-child) > h1 {
+.cast-wrapper > h1 {
     position: relative;
     z-index: 1;
 
@@ -83,8 +79,7 @@ div:has(> h1:first-child) > h1 {
     transform: scaleY(1.16);
 }
 
-.cast-page h1::after,
-div:has(> h1:first-child) > h1::after {
+.cast-wrapper > h1::after {
     content: "";
     display: block;
 
@@ -104,61 +99,46 @@ div:has(> h1:first-child) > h1::after {
         0 0 32px rgba(155, 0, 0, 0.35);
 }
 
-/* Character name */
-.cast-page h2,
-div:has(> h1:first-child) > h2 {
+/* Cast list container */
+.cast-page {
     position: relative;
     z-index: 1;
 
-    width: min(920px, 92vw);
-    margin: 4rem auto 0.45rem;
-
-    color: #9b0000;
-
-    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
-    font-weight: 900;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    text-align: center;
-
-    text-shadow:
-        0 0 8px rgba(155, 0, 0, 0.55),
-        0 2px 8px rgba(0, 0, 0, 0.9);
+    width: min(1120px, 94vw);
+    margin: 0 auto;
 }
 
-/* Actor name */
-.cast-page h3,
-div:has(> h1:first-child) > h3 {
-    position: relative;
-    z-index: 1;
+/* Each cast member row */
+.cast-member {
+    display: grid;
+    grid-template-columns: 420px minmax(0, 1fr);
+    column-gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
 
-    width: min(920px, 92vw);
-    margin: 0 auto 1.35rem;
+    margin: 0 auto 6rem;
+}
 
-    color: #f4f4f4;
+/* Alternate every other cast profile */
+.cast-member:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr) 420px;
+}
 
-    font-family: "Arial Black", "Impact", "Helvetica Neue", sans-serif;
-    font-size: clamp(1.65rem, 4vw, 3.5rem);
-    line-height: 1;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: center;
+.cast-member:nth-child(even) .cast-headshot {
+    grid-column: 2;
+}
 
-    text-shadow:
-        0 0 2px rgba(255, 255, 255, 0.75),
-        0 5px 18px rgba(0, 0, 0, 0.95);
+.cast-member:nth-child(even) .cast-info {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
 }
 
 /* Cast portraits */
 .cast-headshot {
-    position: relative;
-    z-index: 1;
-
     display: block;
-    width: min(420px, 86vw);
+
+    width: 420px;
     height: 520px;
-    margin: 1.35rem auto 4.5rem;
 
     object-fit: cover;
     object-position: center top;
@@ -187,43 +167,95 @@ div:has(> h1:first-child) > h3 {
         0 22px 48px rgba(0, 0, 0, 0.92);
 }
 
-/* Subtle divider effect between cast entries */
-.cast-headshot:not(:last-child)::after {
-    content: "";
+/* Text column */
+.cast-info {
+    grid-column: 2;
+    padding-top: 0.25rem;
+}
+
+/* Character name */
+.cast-info h2 {
+    margin: 0 0 0.45rem;
+
+    color: #9b0000;
+
+    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(155, 0, 0, 0.55),
+        0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Actor name */
+.cast-info h3 {
+    margin: 0;
+
+    color: #f4f4f4;
+
+    font-family: "Arial Black", "Impact", "Helvetica Neue", sans-serif;
+    font-size: clamp(1.65rem, 4vw, 3.5rem);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.75),
+        0 5px 18px rgba(0, 0, 0, 0.95);
 }
 
 /* Mobile */
 @media (max-width: 700px) {
-    .cast-page,
-    div:has(> h1:first-child) {
+    .cast-wrapper {
         padding: 4.5rem 1rem 4rem;
     }
 
-    .cast-page h1,
-    div:has(> h1:first-child) > h1 {
+    .cast-wrapper > h1 {
         font-size: clamp(2.75rem, 15vw, 5rem);
         letter-spacing: 0.16em;
         margin-bottom: 3rem;
     }
 
-    .cast-page h2,
-    div:has(> h1:first-child) > h2 {
-        margin-top: 3.25rem;
-        font-size: 0.82rem;
-        letter-spacing: 0.16em;
-        text-align: center;
+    .cast-page {
+        width: min(920px, 94vw);
     }
 
-    .cast-page h3,
-    div:has(> h1:first-child) > h3 {
-        font-size: clamp(1.65rem, 9vw, 2.65rem);
-        text-align: center;
-        letter-spacing: 0.06em;
+    .cast-member,
+    .cast-member:nth-child(even) {
+        display: block;
+        margin-bottom: 4.5rem;
+    }
+
+    .cast-member:nth-child(even) .cast-info {
+        text-align: left;
     }
 
     .cast-headshot {
         width: min(320px, 88vw);
         height: 410px;
-        margin-bottom: 3.5rem;
+        margin: 0 auto 1.7rem;
+    }
+
+    .cast-info {
+        padding-top: 0;
+    }
+
+    .cast-info h2 {
+        margin: 0 auto 0.45rem;
+
+        font-size: 0.82rem;
+        letter-spacing: 0.16em;
+        text-align: center;
+    }
+
+    .cast-info h3 {
+        margin: 0 auto;
+
+        font-size: clamp(1.65rem, 9vw, 2.65rem);
+        text-align: center;
+        letter-spacing: 0.06em;
     }
 }
