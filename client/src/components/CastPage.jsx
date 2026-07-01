@@ -1,4 +1,9 @@
 import "../css/CastPage.css";
+import GiancarloHeadshot from "/src/assets/Cast Photos/Giancarlo Lugo headshot1a.jpg";
+import JackHeadshot from "/src/assets/Cast Photos/JackLefelt.JPEG";
+import RudyHeadshot from "/src/assets/Cast Photos/Rudy Rodriguez.jpg";
+import LisaHeadshot from "/src/assets/Cast Photos/Lisa-Ginel.jpg";
+import GeorgeHeadshot from "/src/assets/Cast Photos/George Scro.jpg";
 
 const CastPage = () => {
     return (
@@ -8,7 +13,7 @@ const CastPage = () => {
             <div className="cast-page">
                 <section className="cast-member">
                     <img
-                        src="/src/assets/Cast Photos/Giancarlo Lugo headshot1a.jpg"
+                        src={GiancarloHeadshot}
                         alt="Giancarlo Lugo"
                         className="cast-headshot"
                     />
@@ -21,7 +26,7 @@ const CastPage = () => {
 
                 <section className="cast-member">
                     <img
-                        src="/src/assets/Cast Photos/JackLefelt.JPEG"
+                        src={JackHeadshot}
                         alt="Jack Lefelf"
                         className="cast-headshot"
                     />
@@ -34,7 +39,7 @@ const CastPage = () => {
 
                 <section className="cast-member">
                     <img
-                        src="/src/assets/Cast Photos/Rudy Rodriguez.jpg"
+                        src={RudyHeadshot}
                         alt="Rudy Rodriguez"
                         className="cast-headshot"
                     />
@@ -47,7 +52,7 @@ const CastPage = () => {
 
                 <section className="cast-member">
                     <img
-                        src="/src/assets/Cast Photos/Lisa-Ginel.jpg"
+                        src={LisaHeadshot}
                         alt="Lisa Ginel"
                         className="cast-headshot"
                     />
@@ -60,7 +65,7 @@ const CastPage = () => {
 
                 <section className="cast-member">
                     <img
-                        src="/src/assets/Cast Photos/George Scro.jpg"
+                        src={GeorgeHeadshot}
                         alt="George Scro"
                         className="cast-headshot"
                     />

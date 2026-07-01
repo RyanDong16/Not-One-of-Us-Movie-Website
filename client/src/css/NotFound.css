@@ -1,0 +1,314 @@
+.not-found-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 6rem 1.5rem 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 50% 12%, rgba(155, 0, 0, 0.3), transparent 32%),
+        radial-gradient(circle at 18% 35%, rgba(80, 0, 0, 0.2), transparent 28%),
+        radial-gradient(circle at 82% 28%, rgba(120, 0, 0, 0.16), transparent 28%),
+        linear-gradient(180deg, #050505 0%, #0a0a0a 48%, #000000 100%);
+
+    color: #f2f2f2;
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Gritty film texture */
+.not-found-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.03) 0px,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.018) 0px,
+            rgba(255, 0, 0, 0.018) 1px,
+            transparent 1px,
+            transparent 7px
+        );
+
+    opacity: 0.18;
+    mix-blend-mode: screen;
+}
+
+/* Dark noir vignette */
+.not-found-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.88) 100%);
+}
+
+.not-found-content {
+    position: relative;
+    z-index: 1;
+
+    width: min(900px, 94vw);
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4rem);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 20, 20, 0.72),
+            rgba(5, 5, 5, 0.86)
+        );
+
+    border: 1px solid rgba(155, 0, 0, 0.48);
+
+    box-shadow:
+        0 0 22px rgba(155, 0, 0, 0.28),
+        0 22px 50px rgba(0, 0, 0, 0.9);
+}
+
+.not-found-content::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+    width: min(520px, 76vw);
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(155, 0, 0, 0.95),
+        transparent
+    );
+
+    box-shadow:
+        0 0 16px rgba(155, 0, 0, 0.85),
+        0 0 32px rgba(155, 0, 0, 0.35);
+}
+
+.not-found-kicker {
+    margin: 0 0 1rem;
+
+    color: #9b0000;
+
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(155, 0, 0, 0.65),
+        0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.not-found-content h1 {
+    margin: 0;
+
+    font-family: "Arial Black", "Impact", "Helvetica Neue", sans-serif;
+    font-size: clamp(2.4rem, 8vw, 6.5rem);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: clamp(0.12em, 0.9vw, 0.24em);
+    text-transform: uppercase;
+
+    color: #f5f5f5;
+
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.9),
+        0 5px 18px rgba(0, 0, 0, 0.95),
+        0 0 32px rgba(155, 0, 0, 0.55);
+
+    transform: scaleY(1.14);
+}
+
+.not-found-content h1 span {
+    color: #9b0000;
+
+    text-shadow:
+        0 0 2px rgba(155, 0, 0, 0.9),
+        0 5px 18px rgba(0, 0, 0, 0.95),
+        0 0 30px rgba(155, 0, 0, 0.6);
+}
+
+.not-found-content h2 {
+    margin: 2rem 0 1rem;
+
+    color: #f2f2f2;
+
+    font-family: "Arial Black", "Impact", "Helvetica Neue", sans-serif;
+    font-size: clamp(1.5rem, 4vw, 3.25rem);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.75),
+        0 5px 18px rgba(0, 0, 0, 0.95);
+}
+
+.not-found-message {
+    max-width: 640px;
+    margin: 0 auto 2rem;
+
+    color: #d6d6d6;
+
+    font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+.not-found-link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+
+    padding: 0.45rem 0;
+
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+
+    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: transparent;
+
+    background-image:
+        linear-gradient(90deg, #c40000, #c40000),
+        linear-gradient(90deg, #ffffff, #ffffff);
+
+    background-size:
+        0% 100%,
+        100% 100%;
+
+    background-position:
+        left center,
+        left center;
+
+    background-repeat: no-repeat;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.95),
+        0 0 12px rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+
+    transition:
+        background-size 0.38s ease,
+        transform 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+.not-found-link::after {
+    content: "›";
+
+    color: #ffffff;
+    font-size: 1.45rem;
+    line-height: 1;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.95),
+        0 0 12px rgba(255, 255, 255, 0.2);
+
+    transition:
+        color 0.38s ease,
+        text-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.not-found-link:hover {
+    transform: translateY(-2px);
+
+    background-size:
+        100% 100%,
+        100% 100%;
+
+    text-shadow:
+        0 0 8px rgba(196, 0, 0, 0.85),
+        0 0 18px rgba(255, 0, 0, 0.65);
+}
+
+.not-found-link:hover::after {
+    color: #c40000;
+
+    text-shadow:
+        0 0 8px rgba(196, 0, 0, 0.85),
+        0 0 18px rgba(255, 0, 0, 0.65);
+}
+
+.not-found-link:focus-visible {
+    outline: none;
+
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.95),
+        0 0 18px rgba(255, 0, 0, 0.75);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .not-found-section {
+        padding: 4.5rem 1rem 4rem;
+    }
+
+    .not-found-content {
+        padding: 2rem 1.1rem;
+    }
+
+    .not-found-kicker {
+        font-size: 0.68rem;
+        letter-spacing: 0.18em;
+    }
+
+    .not-found-content h1 {
+        font-size: clamp(2rem, 13vw, 4.25rem);
+        letter-spacing: 0.1em;
+    }
+
+    .not-found-content h2 {
+        margin-top: 1.6rem;
+        font-size: clamp(1.35rem, 8vw, 2.4rem);
+        letter-spacing: 0.1em;
+    }
+
+    .not-found-message {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .not-found-link {
+        font-size: 0.85rem;
+        letter-spacing: 0.13em;
+    }
+}

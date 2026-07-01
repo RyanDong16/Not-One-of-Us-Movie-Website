@@ -1,4 +1,6 @@
 import "../css/Footer.css";
+import InstagramLogo from "/src/assets/Footer Photos/white-instagram-logo-transparent.png";
+import YouTubeLogo from "/src/assets/Footer Photos/white-youtube-logo-transparent.png";
 
 const Footer = () => {
     return (
@@ -27,7 +29,7 @@ const Footer = () => {
                             aria-label="Open Not One of Us Instagram"
                         >
                             <img
-                                src="/src/assets/Footer Photos/white-instagram-logo-transparent.png"
+                                src={InstagramLogo}
                                 alt="Not One of Us Instagram"
                                 className="NotOneofUs-Instagram"
                             />
@@ -42,7 +44,7 @@ const Footer = () => {
                             aria-label="Open Cruise Films Instagram"
                         >
                             <img
-                                src="/src/assets/Footer Photos/white-instagram-logo-transparent.png"
+                                src={InstagramLogo}
                                 alt="Cruise Films Instagram"
                                 className="CruiseFilms-Instagram"
                             />
@@ -55,7 +57,7 @@ const Footer = () => {
                             aria-label="Open Cruise Films YouTube"
                         >
                             <img
-                                src="/src/assets/Footer Photos/white-youtube-logo-transparent.png"
+                                src={YouTubeLogo}
                                 alt="Cruise Films YouTube"
                                 className="CruiseFilms-YouTube"
                             />
@@ -66,6 +68,8 @@ const Footer = () => {
                 <div className="footer-divider"></div>
 
                 <div className="footer-legal">
+                    <h2>Designed by Ryan Dong</h2>
+                    <span className="footer-legal-gap" aria-hidden="true"></span>
                     <h2>2026 Cruise Films</h2>
                     <span className="footer-legal-gap" aria-hidden="true"></span>
                     <h2>All Rights Reserved</h2>

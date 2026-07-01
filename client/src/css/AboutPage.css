@@ -213,6 +213,141 @@
         0 26px 56px rgba(0, 0, 0, 0.95);
 }
 
+/* Production stills carousel */
+.production-stills-section {
+    position: relative;
+    z-index: 1;
+
+    width: min(1200px, 94vw);
+    margin: 5.5rem auto 0;
+}
+
+.production-stills-section h2 {
+    margin: 0 0 1.75rem;
+
+    color: #9b0000;
+
+    font-size: clamp(1rem, 1.7vw, 1.35rem);
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-align: center;
+
+    text-shadow:
+        0 0 8px rgba(155, 0, 0, 0.55),
+        0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* The visible carousel area */
+.production-stills-window {
+    position: relative;
+
+    width: 100%;
+    overflow: hidden;
+
+    border-top: 1px solid rgba(155, 0, 0, 0.35);
+    border-bottom: 1px solid rgba(155, 0, 0, 0.35);
+
+    padding: 1rem 0;
+}
+
+/* Fade edges so the row feels cinematic */
+.production-stills-window::before,
+.production-stills-window::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+
+    width: clamp(3rem, 8vw, 7rem);
+    pointer-events: none;
+}
+
+.production-stills-window::before {
+    left: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.95),
+        transparent
+    );
+}
+
+.production-stills-window::after {
+    right: 0;
+
+    background: linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0.95),
+        transparent
+    );
+}
+
+/* Horizontal row */
+.production-stills-row {
+    --still-width: clamp(230px, 26vw, 360px);
+    --still-gap: 1.1rem;
+
+    display: flex;
+    align-items: center;
+    gap: var(--still-gap);
+
+    width: max-content;
+
+    transform: translateX(0);
+}
+
+/* This class is temporarily added every 10 seconds */
+.production-stills-row.sliding {
+    animation: productionStillSlideLeft 0.8s ease-in-out forwards;
+}
+
+@keyframes productionStillSlideLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc((var(--still-width) + var(--still-gap)) * -1));
+    }
+}
+
+.production-still-image {
+    display: block;
+
+    width: var(--still-width);
+    height: 220px;
+
+    flex: 0 0 auto;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 1px solid rgba(155, 0, 0, 0.52);
+    background: #050505;
+
+    box-shadow:
+        0 0 16px rgba(155, 0, 0, 0.24),
+        0 16px 34px rgba(0, 0, 0, 0.82);
+
+    filter: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.production-still-image:hover {
+    transform: translateY(-4px);
+
+    filter: none;
+
+    box-shadow:
+        0 0 24px rgba(155, 0, 0, 0.55),
+        0 22px 48px rgba(0, 0, 0, 0.92);
+}
+
 /* Mobile */
 @media (max-width: 700px) {
     .about-section {
@@ -255,5 +390,32 @@
 
     .movie-poster {
         width: min(320px, 88vw);
+    }
+
+    .production-stills-section {
+        width: min(920px, 94vw);
+        margin-top: 4rem;
+    }
+
+    .production-stills-section h2 {
+        font-size: 0.82rem;
+        letter-spacing: 0.16em;
+        margin-bottom: 1.35rem;
+    }
+
+    .production-stills-window {
+        padding: 0.85rem 0;
+    }
+
+    .production-stills-row {
+        --still-width: 260px;
+        --still-gap: 0.85rem;
+
+        gap: var(--still-gap);
+    }
+
+    .production-still-image {
+        width: var(--still-width);
+        height: 170px;
     }
 }

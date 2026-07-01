@@ -1,4 +1,10 @@
 import "../css/CrewPage.css";
+import CrewPhoto from "/src/assets/Crew Photos/DSCF6997-2.jpg";
+import JulianHeadshot from "/src/assets/Crew Photos/Julian Headshot.jpg";
+import AlanaHeadshot from "/src/assets/Crew Photos/520A2983.jpg";
+import KevinHeadshot from "/src/assets/Crew Photos/Kevin Favorite.jpg";
+import MaximoHeadshot from "/src/assets/Crew Photos/520A2928.jpg";
+import EduardoHeadshot from "/src/assets/Crew Photos/520A2899.jpg";
 
 const CrewPage = () => {
     return (
@@ -6,7 +12,7 @@ const CrewPage = () => {
             <h1>Crew</h1>
 
             <img
-                src="/src/assets/Crew Photos/DSCF6997-2.jpg"
+                src={CrewPhoto}
                 alt="Full Cast Photos"
                 className="full-cast-photo"
             />
@@ -14,7 +20,7 @@ const CrewPage = () => {
             <div className="crew-page">
                 <section className="crew-member">
                     <img
-                        src="/src/assets/Crew Photos/Julian Headshot.jpg"
+                        src={JulianHeadshot}
                         alt="Julian Rodriguez"
                         className="crew-headshot"
                     />
@@ -40,7 +46,7 @@ const CrewPage = () => {
 
                 <section className="crew-member">
                     <img
-                        src="/src/assets/Crew Photos/520A2983.jpg"
+                        src={AlanaHeadshot}
                         alt="Alana Davis"
                         className="crew-headshot"
                     />
@@ -60,7 +66,7 @@ const CrewPage = () => {
 
                 <section className="crew-member">
                     <img
-                        src="/src/assets/Crew Photos/Kevin Favorite.jpg"
+                        src={KevinHeadshot}
                         alt="Kevin Valderrama-Garcia"
                         className="crew-headshot"
                     />
@@ -82,7 +88,7 @@ const CrewPage = () => {
 
                 <section className="crew-member">
                     <img
-                        src="/src/assets/Crew Photos/520A2928.jpg"
+                        src={MaximoHeadshot}
                         alt="Maximo Gutierrez"
                         className="crew-headshot"
                     />
@@ -105,7 +111,7 @@ const CrewPage = () => {
 
                 <section className="crew-member">
                     <img
-                        src="/src/assets/Crew Photos/520A2899.jpg"
+                        src={EduardoHeadshot}
                         alt="Eduardo Salas Mata"
                         className="crew-headshot"
                     />
