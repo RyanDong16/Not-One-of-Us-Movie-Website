@@ -6,7 +6,7 @@ const CrewPage = () => {
             <h1>Crew</h1>
 
             <img
-                src="/assets/Crew Photos/DSCF6997-2.jpg"
+                src="/src/assets/Crew Photos/DSCF6997-2.jpg"
                 alt="Full Cast Photos"
                 className="full-cast-photo"
             />
@@ -14,7 +14,7 @@ const CrewPage = () => {
             <div className="crew-page">
                 <section className="crew-member">
                     <img
-                        src="/assets/Crew Photos/Julian Headshot.jpg"
+                        src="/src/assets/Crew Photos/Julian Headshot.jpg"
                         alt="Julian Rodriguez"
                         className="crew-headshot"
                     />
@@ -40,7 +40,7 @@ const CrewPage = () => {
 
                 <section className="crew-member">
                     <img
-                        src="/assets/Crew Photos/520A2983.jpg"
+                        src="/src/assets/Crew Photos/520A2983.jpg"
                         alt="Alana Davis"
                         className="crew-headshot"
                     />
@@ -60,7 +60,7 @@ const CrewPage = () => {
 
                 <section className="crew-member">
                     <img
-                        src="/assets/Crew Photos/Kevin Favorite.jpg"
+                        src="/src/assets/Crew Photos/Kevin Favorite.jpg"
                         alt="Kevin Valderrama-Garcia"
                         className="crew-headshot"
                     />
@@ -82,7 +82,7 @@ const CrewPage = () => {
 
                 <section className="crew-member">
                     <img
-                        src="/assets/Crew Photos/520A2928.jpg"
+                        src="/src/assets/Crew Photos/520A2928.jpg"
                         alt="Maximo Gutierrez"
                         className="crew-headshot"
                     />
@@ -105,7 +105,7 @@ const CrewPage = () => {
 
                 <section className="crew-member">
                     <img
-                        src="/assets/Crew Photos/520A2899.jpg"
+                        src="/src/assets/Crew Photos/520A2899.jpg"
                         alt="Eduardo Salas Mata"
                         className="crew-headshot"
                     />

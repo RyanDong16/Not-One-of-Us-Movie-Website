@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../css/NavBar.css";
+import cruiseFilmsLogo from "../assets/Home Photos/cruise_films_logo_ultra_soft_blend2.png";
 
 const NavBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -23,6 +24,12 @@ const NavBar = () => {
             </button>
 
             <div className={`nav-menu ${menuOpen ? "show" : ""}`}>
+                <img
+                    src={cruiseFilmsLogo}
+                    alt="Cruise Films Logo"
+                    className="nav-cruise-films-logo"
+                />
+
                 <NavLink to="/" onClick={closeMenu} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                     Home
                 </NavLink>

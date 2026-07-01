@@ -27,7 +27,7 @@ const Footer = () => {
                             aria-label="Open Not One of Us Instagram"
                         >
                             <img
-                                src="/assets/Footer Photos/white-instagram-logo-transparent.png"
+                                src="/src/assets/Footer Photos/white-instagram-logo-transparent.png"
                                 alt="Not One of Us Instagram"
                                 className="NotOneofUs-Instagram"
                             />
@@ -42,7 +42,7 @@ const Footer = () => {
                             aria-label="Open Cruise Films Instagram"
                         >
                             <img
-                                src="/assets/Footer Photos/white-instagram-logo-transparent.png"
+                                src="/src/assets/Footer Photos/white-instagram-logo-transparent.png"
                                 alt="Cruise Films Instagram"
                                 className="CruiseFilms-Instagram"
                             />
@@ -55,7 +55,7 @@ const Footer = () => {
                             aria-label="Open Cruise Films YouTube"
                         >
                             <img
-                                src="/assets/Footer Photos/white-youtube-logo-transparent.png"
+                                src="/src/assets/Footer Photos/white-youtube-logo-transparent.png"
                                 alt="Cruise Films YouTube"
                                 className="CruiseFilms-YouTube"
                             />

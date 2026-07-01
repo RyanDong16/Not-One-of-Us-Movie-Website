@@ -1,4 +1,6 @@
 import "../css/Home.css";
+import cruiseFilmsLogo from "../assets/Home Photos/Cruise Films logo.png";
+import homeTitleCard from "../assets/Home Photos/Not One of Us Social Card.jpg";
 
 const Home = () => {
     return (
@@ -6,7 +8,7 @@ const Home = () => {
             <div className="home-spotlight"></div>
 
             <img
-                src="/assets/Home Photos/Not One of Us Social Card.jpg"
+                src={homeTitleCard}
                 alt="Not One of Us"
                 className="home-title-card"
             />
@@ -22,7 +24,7 @@ const Home = () => {
 
             <a
                 className="film-link-btn"
-                href="https://www.youtube.com/watch?v=p42a0FgbbI Q"
+                href="https://www.youtube.com/watch?v=p42a0FgbbIQ"
                 target="_blank"
                 rel="noreferrer"
             >

@@ -1,3 +1,259 @@
+/* Overall About page */
 .about-section {
-    color: white;
+    position: relative;
+    min-height: 100vh;
+    padding: 6rem 1.5rem 5rem;
+
+    background:
+        radial-gradient(circle at 50% 8%, rgba(155, 0, 0, 0.28), transparent 32%),
+        radial-gradient(circle at 15% 35%, rgba(80, 0, 0, 0.2), transparent 28%),
+        linear-gradient(180deg, #050505 0%, #0a0a0a 48%, #000000 100%);
+
+    color: #f2f2f2;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Gritty film texture */
+.about-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.03) 0px,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.018) 0px,
+            rgba(255, 0, 0, 0.018) 1px,
+            transparent 1px,
+            transparent 7px
+        );
+
+    opacity: 0.18;
+    mix-blend-mode: screen;
+}
+
+/* Dark noir vignette */
+.about-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at center, transparent 38%, rgba(0, 0, 0, 0.86) 100%);
+}
+
+/* Page title */
+.about-section > h1 {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 auto 4rem;
+    text-align: center;
+
+    font-family: "Arial Black", "Impact", "Helvetica Neue", sans-serif;
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: clamp(0.18em, 1vw, 0.32em);
+    text-transform: uppercase;
+
+    color: #f5f5f5;
+
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.9),
+        0 5px 18px rgba(0, 0, 0, 0.95),
+        0 0 32px rgba(155, 0, 0, 0.6);
+
+    transform: scaleY(1.16);
+}
+
+.about-section > h1::after {
+    content: "";
+    display: block;
+
+    width: min(460px, 72vw);
+    height: 2px;
+    margin: 1.15rem auto 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(155, 0, 0, 0.95),
+        transparent
+    );
+
+    box-shadow:
+        0 0 16px rgba(155, 0, 0, 0.85),
+        0 0 32px rgba(155, 0, 0, 0.35);
+}
+
+/* Content layout */
+.about-content {
+    position: relative;
+    z-index: 1;
+
+    width: min(1120px, 94vw);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+    column-gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+}
+
+/* Text column */
+.about-text {
+    position: relative;
+
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 20, 20, 0.72),
+            rgba(5, 5, 5, 0.84)
+        );
+
+    border: 1px solid rgba(155, 0, 0, 0.45);
+
+    box-shadow:
+        0 0 18px rgba(155, 0, 0, 0.24),
+        0 18px 42px rgba(0, 0, 0, 0.85);
+}
+
+.about-text::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    bottom: 1.5rem;
+
+    width: 3px;
+
+    background: #9b0000;
+
+    box-shadow:
+        0 0 10px rgba(155, 0, 0, 0.9),
+        0 0 22px rgba(155, 0, 0, 0.45);
+}
+
+/* Section heading */
+.about-text h2 {
+    margin: 0 0 1.2rem;
+
+    color: #9b0000;
+
+    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(155, 0, 0, 0.55),
+        0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Logline */
+.about-text p {
+    margin: 0;
+
+    color: #e2e2e2;
+
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    line-height: 1.85;
+    letter-spacing: 0.035em;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+/* Movie poster */
+.movie-poster {
+    display: block;
+
+    width: min(420px, 86vw);
+    height: auto;
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    border: 1px solid rgba(155, 0, 0, 0.62);
+    background: #050505;
+
+    box-shadow:
+        0 0 22px rgba(155, 0, 0, 0.32),
+        0 22px 50px rgba(0, 0, 0, 0.88);
+
+    filter: brightness(0.84) contrast(1.12) saturate(0.88);
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.movie-poster:hover {
+    transform: translateY(-4px);
+    filter: brightness(0.96) contrast(1.18) saturate(0.95);
+
+    box-shadow:
+        0 0 28px rgba(155, 0, 0, 0.55),
+        0 26px 56px rgba(0, 0, 0, 0.95);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .about-section {
+        padding: 4.5rem 1rem 4rem;
+    }
+
+    .about-section > h1 {
+        font-size: clamp(2.75rem, 15vw, 5rem);
+        letter-spacing: 0.16em;
+        margin-bottom: 3rem;
+    }
+
+    .about-content {
+        width: min(920px, 94vw);
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .about-text {
+        padding: 1.35rem 1.1rem;
+    }
+
+    .about-text::before {
+        top: 1rem;
+        bottom: 1rem;
+    }
+
+    .about-text h2 {
+        font-size: 0.82rem;
+        letter-spacing: 0.16em;
+        text-align: center;
+    }
+
+    .about-text p {
+        font-size: 0.98rem;
+        line-height: 1.75;
+        text-align: left;
+    }
+
+    .movie-poster {
+        width: min(320px, 88vw);
+    }
 }

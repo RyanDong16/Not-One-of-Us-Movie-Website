@@ -8,7 +8,7 @@ const CastPage = () => {
             <div className="cast-page">
                 <section className="cast-member">
                     <img
-                        src="/assets/Cast Photos/Giancarlo Lugo headshot1a.jpg"
+                        src="/src/assets/Cast Photos/Giancarlo Lugo headshot1a.jpg"
                         alt="Giancarlo Lugo"
                         className="cast-headshot"
                     />
@@ -21,7 +21,7 @@ const CastPage = () => {
 
                 <section className="cast-member">
                     <img
-                        src="/assets/Cast Photos/JackLefelt.JPEG"
+                        src="/src/assets/Cast Photos/JackLefelt.JPEG"
                         alt="Jack Lefelf"
                         className="cast-headshot"
                     />
@@ -34,7 +34,7 @@ const CastPage = () => {
 
                 <section className="cast-member">
                     <img
-                        src="/assets/Cast Photos/Rudy Rodriguez.jpg"
+                        src="/src/assets/Cast Photos/Rudy Rodriguez.jpg"
                         alt="Rudy Rodriguez"
                         className="cast-headshot"
                     />
@@ -47,7 +47,7 @@ const CastPage = () => {
 
                 <section className="cast-member">
                     <img
-                        src="/assets/Cast Photos/Lisa-Ginel.jpg"
+                        src="/src/assets/Cast Photos/Lisa-Ginel.jpg"
                         alt="Lisa Ginel"
                         className="cast-headshot"
                     />
@@ -60,7 +60,7 @@ const CastPage = () => {
 
                 <section className="cast-member">
                     <img
-                        src="/assets/Cast Photos/George Scro.jpg"
+                        src="/src/assets/Cast Photos/George Scro.jpg"
                         alt="George Scro"
                         className="cast-headshot"
                     />
